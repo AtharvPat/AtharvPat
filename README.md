@@ -4,9 +4,9 @@
 <p align="left"> <img src="https://komarev.com/ghpvc/?username=atharvpat&label=Profile%20views&color=0e75b6&style=flat" alt="atharvpat" /> </p>
 
 <p align="left"> <a href="https://github.com/ryo-ma/github-profile-trophy"><img src="https://github-profile-trophy.vercel.app/?username=atharvpat" alt="atharvpat" /></a> </p> -->
-<p align="left"> <img src="[https://cdn.dribbble.com/users/1876781/screenshots/6169542/web_character.gif" </p>
-<img align="right" alt="Coding" width="350" src="https://miro.medium.com/max/700/1*vJjJ3Mdok6Rvxx85IIRqBQ.gif"</p> 
-
+<p align="center"> <img src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExMWViOHJham03YXMzNG8zdmV0OGNqcjhyeHE5czI0ZWtiaTJ0NnRvbiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/LaVp0AyqR5bGsC5Cbm/giphy.gif" </p>
+<img align="right" src="https://storage.googleapis.com/gweb-cloudblog-publish/original_images/MLOps_Kloeckner_Hero_Banner_1920x946.gif"</p> 
+<br>
   
   
   - 📫 How to reach me **atharvpat03@gmail.com**
