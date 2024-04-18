@@ -26,7 +26,8 @@
 <img src="https://img.shields.io/badge/Android-05122A?style=flat&logo=android" alt="android Badge" height="25">&nbsp;
  </a> </p>
 
-<p><img align="left" src="https://github-readme-stats.vercel.app/api/top-langs?username=atharvpat&show_icons=true&locale=en&layout=compact" alt="atharvpat" /></p>
+<p><img align="center" src="https://github-readme-stats.vercel.app/api/top-langs?username=atharvpat&show_icons=true&locale=en&layout=compact" alt="atharvpat" /></p>
 
+<a>  <img align="center" href="https://git.io/streak-stats"><img src="https://github-readme-streak-stats.herokuapp.com?user=AtharvPat&theme=blue-navy&border_radius=5" alt="GitHub Streak" /> </a>
 
 <p>&nbsp;<img align="center" src="https://github-readme-stats.vercel.app/api?username=atharvpat&show_icons=true&locale=en" alt="atharvpat" /></p>
