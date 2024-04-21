@@ -1,5 +1,5 @@
 <h1 align="center">Hi 👋, I'm Atharv Patil</h1>
-<h3 align="center">A passionate EXPLORER from India</h3>
+<h3 align="center">A passionate EXPLORER from India</h3> 
 
 <p align="center"> <img src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExMWViOHJham03YXMzNG8zdmV0OGNqcjhyeHE5czI0ZWtiaTJ0NnRvbiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/LaVp0AyqR5bGsC5Cbm/giphy.gif" </p>
 <!-- <img align="right" src="https://storage.googleapis.com/gweb-cloudblog-publish/original_images/MLOps_Kloeckner_Hero_Banner_1920x946.gif"</p>  -->
