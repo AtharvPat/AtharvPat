@@ -5,7 +5,6 @@
 <!-- <img align="right" src="https://storage.googleapis.com/gweb-cloudblog-publish/original_images/MLOps_Kloeckner_Hero_Banner_1920x946.gif"</p>  -->
 <br>
   
-  
   - 📫 How to reach me **atharvpat03@gmail.com**
 
 
