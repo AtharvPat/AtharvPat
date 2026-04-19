@@ -12,25 +12,17 @@ permissions:
   contents: write
 
 jobs:
-  build:
+  iso_calendar:
     runs-on: ubuntu-latest
-    name: Generate 3D Contribution Skyline
-
     steps:
-      - name: Checkout repo
-        uses: actions/checkout@v5
-
-      - name: Generate 3D contribution graph
-        uses: yoshi389111/github-profile-3d-contrib@v0.9.1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          USERNAME: AtharvPat
-          SETTING_JSON: conf/settings.json
-
-      - name: Commit and push generated SVG
-        run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          git add -A
-          git diff --staged --quiet || git commit -m "chore: auto-update 3D contribution city [skip ci]"
-          git push
+      - uses: lowlighter/metrics@latest
+        with:
+          filename: profile-3d-contrib/iso_calendar.svg
+          token: ${{ secrets.METRICS_SECRET }}
+          committer_token: ${{ secrets.GITHUB_TOKEN }}
+          user: AtharvPat
+          template: classic
+          base: ""
+          config_timezone: America/Chicago
+          plugin_isocalendar: yes
+          plugin_isocalendar_duration: half-year
