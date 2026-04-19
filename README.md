@@ -17,7 +17,7 @@ atharv = {
     "name"       : "Atharv Patil",
     "role"       : "ML / AI Engineer",
     "location"   : "Chicago 🇺🇸",
-    "philosophy" : "Build things that think.",
+    "philosophy" : "Build things that think",
     "fun_fact"   : "I think I am funny. The jury is still out.",
     "reach_me"   : "atharvpat03@gmail.com"
 }
