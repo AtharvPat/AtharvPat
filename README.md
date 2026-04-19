@@ -129,7 +129,7 @@ class AtharvPatil:
 
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/atharvpat/atharvpat/main/profile-3d-contrib/profile-night-rainbow.svg" width="100%" alt="3D Contribution City" />
+<img src="https://raw.githubusercontent.com/AtharvPat/AtharvPat/main/profile-3d-contrib/profile-night-rainbow.svg" width="100%" alt="3D Contribution City" />
 
 </div>
 
