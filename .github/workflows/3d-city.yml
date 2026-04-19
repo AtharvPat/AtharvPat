@@ -16,17 +16,17 @@ jobs:
 
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4          # ✅ updated: Node.js 24 compatible
 
       - name: Generate 3D contribution graph
-        uses: yoshi389111/github-profile-3d-contrib@0.7.1
+        uses: yoshi389111/github-profile-3d-contrib@0.7.4   # ✅ updated to latest
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          USERNAME: atharvpat           # ← your GitHub username
+          USERNAME: AtharvPat           # ← your GitHub username (case-sensitive)
           MAX_REPOS: 10
           SETTING_JSON: |
             {
-              "githubUserName": "atharvpat",
+              "githubUserName": "AtharvPat",
               "title": "Atharv's Commit City",
               "topLangType": "pie",
               "topLangForegroundColor": "#ffffff",
