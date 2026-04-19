@@ -1,4 +1,4 @@
-name: Generate 3D Contribution City
+name: Metrics
 
 on:
   schedule:
@@ -17,7 +17,7 @@ jobs:
     steps:
       - uses: lowlighter/metrics@latest
         with:
-          filename: profile-3d-contrib/iso_calendar.svg
+          filename: iso_calendar.svg
           token: ${{ secrets.METRICS_SECRET }}
           committer_token: ${{ secrets.GITHUB_TOKEN }}
           user: AtharvPat
