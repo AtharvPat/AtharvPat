@@ -77,7 +77,7 @@ class AtharvPatil:
 
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:1a1a2e,50:0a3d62,100:0d1117&height=100&section=footer" width="100%" />
+<img src="https://raw.githubusercontent.com/AtharvPat/AtharvPat/main/profile-3d-contrib/iso_calendar.svg" width="100%" alt="3D Contribution City" />
 
 *"An explorer is just an engineer with wanderlust."* 🚀
 
