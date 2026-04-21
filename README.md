@@ -18,7 +18,7 @@
 ```python
 class AtharvPatil:
     role       = "AI Engineer"
-    location   = "Chicago, USA 🇺🇸"
+    location   = "Chicago, USA 🇺🇸 "
     focus      = ["LLMs & RAG", "Computer Vision", "MLOps"]
     stack      = ["Python", "PyTorch", "LangChain", "Docker", "FastAPI", "Flutter"]
     currently  = "Building AI systems that actually do cool things"
