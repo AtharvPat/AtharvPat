@@ -27,17 +27,127 @@ jobs:
   stats:
     runs-on: ubuntu-latest
     steps:
-      - uses: lowlighter/metrics@latest
-        with:
-          filename: stats.svg
-          token: ${{ secrets.METRICS_SECRET }}
-          committer_token: ${{ secrets.GITHUB_TOKEN }}
-          user: AtharvPat
-          template: classic
-          base: account, repositories
-          config_timezone: America/Chicago
-          plugin_stars: yes
-          plugin_stars_limit: 0
-          plugin_repositories: yes
-          plugin_repositories_order: stars
-          config_display: large
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Generate stats SVG
+        env:
+          METRICS_SECRET: ${{ secrets.METRICS_SECRET }}
+        run: |
+          python3 << 'EOF'
+          import urllib.request
+          import json
+          import os
+
+          token = os.environ["METRICS_SECRET"]
+          username = "AtharvPat"
+
+          def gh(url):
+              req = urllib.request.Request(url, headers={
+                  "Authorization": f"token {token}",
+                  "Accept": "application/vnd.github+json",
+                  "User-Agent": "metrics-action"
+              })
+              with urllib.request.urlopen(req) as r:
+                  return json.loads(r.read())
+
+          # User info
+          user = gh(f"https://api.github.com/users/{username}")
+
+          # Repos — paginate to get all
+          repos, page = [], 1
+          while True:
+              batch = gh(f"https://api.github.com/user/repos?per_page=100&page={page}&affiliation=owner")
+              if not batch:
+                  break
+              repos += batch
+              page += 1
+
+          total_stars = sum(r["stargazers_count"] for r in repos)
+          total_repos = len(repos)
+
+          # Commits (via search)
+          commits_data = gh(f"https://api.github.com/search/commits?q=author:{username}&per_page=1")
+          total_commits = commits_data.get("total_count", 0)
+
+          # PRs merged
+          prs_data = gh(f"https://api.github.com/search/issues?q=author:{username}+type:pr+is:merged&per_page=1")
+          total_prs = prs_data.get("total_count", 0)
+
+          # Issues closed
+          issues_data = gh(f"https://api.github.com/search/issues?q=author:{username}+type:issue+is:closed&per_page=1")
+          total_issues = issues_data.get("total_count", 0)
+
+          def fmt(n):
+              if n >= 1000:
+                  return f"{n/1000:.1f}k"
+              return str(n)
+
+          stats = [
+              ("COMMITS",    fmt(total_commits), "⌥"),
+              ("REPOS",      fmt(total_repos),   "⊞"),
+              ("STARS",      fmt(total_stars),   "★"),
+              ("ISSUES",     fmt(total_issues),  "◎"),
+              ("PRS MERGED", fmt(total_prs),     "⎇"),
+          ]
+
+          W, H = 495, 165
+          BG       = "#0d1117"
+          BORDER   = "#21262d"
+          ACCENT   = "#00d9ff"
+          TEXT     = "#c9d1d9"
+          MUTED    = "#8b949e"
+          COL_W    = W / len(stats)
+
+          stats_svg = ""
+          for i, (label, value, icon) in enumerate(stats):
+              cx = COL_W * i + COL_W / 2
+              stats_svg += f'''
+                <text x="{cx}" y="105" text-anchor="middle" font-size="9" fill="{MUTED}"
+                  font-family="JetBrains Mono,monospace" letter-spacing="1">{label}</text>
+                <text x="{cx}" y="128" text-anchor="middle" font-size="18" font-weight="700"
+                  fill="{TEXT}" font-family="JetBrains Mono,monospace">{value}</text>
+                <text x="{cx}" y="148" text-anchor="middle" font-size="14"
+                  fill="{ACCENT}" font-family="monospace">{icon}</text>
+              '''
+
+          dividers = ""
+          for i in range(len(stats) - 1):
+              x = COL_W * (i + 1)
+              dividers += f'<line x1="{x}" y1="88" x2="{x}" y2="158" stroke="{BORDER}" stroke-width="1"/>'
+
+          svg = f'''<svg width="{W}" height="{H}" viewBox="0 0 {W} {H}" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="hg" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="{ACCENT}" stop-opacity="0.12"/>
+                <stop offset="100%" stop-color="{ACCENT}" stop-opacity="0"/>
+              </linearGradient>
+              <clipPath id="rc"><rect width="{W}" height="{H}" rx="10"/></clipPath>
+            </defs>
+            <rect width="{W}" height="{H}" rx="10" fill="{BG}" stroke="{BORDER}" stroke-width="1"/>
+            <rect width="{W}" height="80" fill="url(#hg)" clip-path="url(#rc)"/>
+            <rect x="0" y="0" width="3" height="{H}" rx="0" fill="{ACCENT}"/>
+            <text x="18" y="32" font-size="15" font-weight="700" fill="{ACCENT}"
+              font-family="JetBrains Mono,monospace">{user.get("name") or username}</text>
+            <text x="18" y="50" font-size="11" fill="{MUTED}"
+              font-family="JetBrains Mono,monospace">@{username}</text>
+            <text x="{W-14}" y="32" font-size="9" fill="{MUTED}" text-anchor="end"
+              font-family="monospace" letter-spacing="2">GITHUB STATS</text>
+            <line x1="0" y1="72" x2="{W}" y2="72" stroke="{BORDER}" stroke-width="1"/>
+            {dividers}
+            {stats_svg}
+          </svg>'''
+
+          with open("stats.svg", "w") as f:
+              f.write(svg)
+
+          print("stats.svg generated successfully")
+          EOF
+
+      - name: Commit stats.svg
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add stats.svg
+          git diff --cached --quiet || git commit -m "chore: update stats.svg"
+          git push
