@@ -53,8 +53,8 @@ class AtharvPatil:
 ---
 ## 📊 Stats
 <div align="center">
-<img src="https://raw.githubusercontent.com/AtharvPat/AtharvPat/main/stats.svg" width="48%" />
-<img src="https://streak-stats.demolab.com?user=AtharvPat&theme=tokyonight&hide_border=true&background=0d1117&stroke=00d9ff&ring=00d9ff&fire=ff6b6b&currStreakLabel=00d9ff" width="48%" />
+<img src="https://raw.githubusercontent.com/AtharvPat/AtharvPat/main/stats.svg" width="55%" />
+<img src="https://streak-stats.demolab.com?user=AtharvPat&..." width="43%" />
 </div>
 
 ---
