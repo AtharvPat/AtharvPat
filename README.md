@@ -51,14 +51,10 @@ class AtharvPatil:
 ![Git](https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white)
 
 ---
-
 ## 📊 Stats
-
 <div align="center">
-
-<img src="https://github-readme-stats.vercel.app/api?username=AtharvPat&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0d1117&title_color=00d9ff&icon_color=00d9ff&text_color=ffffff&rank_icon=github&hide=jupyter%20notebook,javascript,contribs" width="48%" />
-<img src="https://github-readme-streak-stats.herokuapp.com?user=AtharvPat&theme=tokyonight&hide_border=true&background=0d1117&stroke=00d9ff&ring=00d9ff&fire=ff6b6b&currStreakLabel=00d9ff" width="48%" />
-
+<img src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=AtharvPat&theme=tokyonight" width="48%" />
+<img src="https://streak-stats.demolab.com?user=AtharvPat&theme=tokyonight&hide_border=true&background=0d1117&stroke=00d9ff&ring=00d9ff&fire=ff6b6b&currStreakLabel=00d9ff" width="48%" />
 </div>
 
 ---
