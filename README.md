@@ -21,7 +21,7 @@ class AtharvPatil:
     location   = "Chicago, USA"
     focus      = ["LLMs & RAG", "Computer Vision", "MLOps"]
     stack      = ["Python", "PyTorch", "LangChain", "Docker", "FastAPI", "Flutter"]
-    currently  = "Building AI systems that actually do cool things"
+    currently  = "Building AI systems that actually Think"
     contact    = "atharvpat03@gmail.com"
 ```
 
