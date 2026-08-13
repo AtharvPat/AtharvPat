@@ -42,14 +42,14 @@
       <text x="346.5" y="105" text-anchor="middle" font-size="9" fill="#8b949e"
         font-family="JetBrains Mono,monospace" letter-spacing="1">ISSUES</text>
       <text x="346.5" y="128" text-anchor="middle" font-size="18" font-weight="700"
-        fill="#c9d1d9" font-family="JetBrains Mono,monospace">24</text>
+        fill="#c9d1d9" font-family="JetBrains Mono,monospace">30</text>
       <text x="346.5" y="148" text-anchor="middle" font-size="14"
         fill="#00d9ff" font-family="monospace">◎</text>
     
       <text x="445.5" y="105" text-anchor="middle" font-size="9" fill="#8b949e"
         font-family="JetBrains Mono,monospace" letter-spacing="1">PRS MERGED</text>
       <text x="445.5" y="128" text-anchor="middle" font-size="18" font-weight="700"
-        fill="#c9d1d9" font-family="JetBrains Mono,monospace">64</text>
+        fill="#c9d1d9" font-family="JetBrains Mono,monospace">66</text>
       <text x="445.5" y="148" text-anchor="middle" font-size="14"
         fill="#00d9ff" font-family="monospace">⎇</text>
     
